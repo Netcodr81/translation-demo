@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit, VERSION } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { SubSink } from 'subsink/dist/es2015';
-import { TranslationService } from './core/services/translation.service';
+import { TranslationService } from './services/translation.service';
 
 @Component({
   selector: 'my-app',
