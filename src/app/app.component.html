@@ -1,0 +1,84 @@
+<header class="px-4 bg-blue-500 top-0 w-100">
+  <div class="flex items-center justify-between p-4">
+    <p class="text-white text-[24px]">{{ 'logo' | translate }}</p>
+    <div class="flex justify-around">
+      <select
+        class="text-grey-700 block rounded-md w-[200px] h-[2rem] p-0 pl-[10px]"
+        (change)="onLanguageSelected($event)"
+      >
+        <option
+          *ngFor="let language of availableLanguages"
+          [value]="language.code"
+          [selected]="language.code === currentLanguageCode"
+        >
+          {{ language.name | translate }}
+        </option>
+      </select>
+    </div>
+  </div>
+</header>
+<div class="flex flex-col items-center mt-8">
+  <div class="p-10">
+    <!--Card 1-->
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+      <img
+        class="w-full"
+        src="https://images.pexels.com/photos/417173/pexels-photo-417173.jpeg"
+        alt="Mountain"
+      />
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">{{ 'title' | translate }}</div>
+        <p class="text-gray-700 text-base">
+          {{ 'description' | translate }}
+        </p>
+      </div>
+      <div class="px-6 pt-4 pb-2">
+        <span
+          class="
+            inline-block
+            bg-gray-200
+            rounded-full
+            px-3
+            py-1
+            text-sm
+            font-semibold
+            text-gray-700
+            mr-2
+            mb-2
+          "
+          >{{ 'tag1' | translate }}</span
+        >
+        <span
+          class="
+            inline-block
+            bg-gray-200
+            rounded-full
+            px-3
+            py-1
+            text-sm
+            font-semibold
+            text-gray-700
+            mr-2
+            mb-2
+          "
+          >{{ 'tag2' | translate }}</span
+        >
+        <span
+          class="
+            inline-block
+            bg-gray-200
+            rounded-full
+            px-3
+            py-1
+            text-sm
+            font-semibold
+            text-gray-700
+            mr-2
+            mb-2
+          "
+          >{{ 'tag2' | translate }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
