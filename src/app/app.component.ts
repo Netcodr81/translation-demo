@@ -11,8 +11,9 @@ import { TranslationService } from './services/translation.service';
 export class AppComponent implements OnInit, OnDestroy {
   private subscriptions = new SubSink();
   currentLanguageCode: string = 'en';
+  langLocaleId: string = this.translationService.getCurrentLanguageLocaleId();
   availableLanguages: any[] = [];
-
+  currentDate: Date = new Date();
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
@@ -22,6 +23,8 @@ export class AppComponent implements OnInit, OnDestroy {
       () => {
         this.currentLanguageCode =
           this.translationService.getCurrentLanguageCode();
+        this.langLocaleId =
+          this.translationService.getCurrentLanguageLocaleId();
         this.translationService.translatePage();
       }
     );

@@ -79,6 +79,12 @@
           >{{ 'tag3' | translate }}</span
         >
       </div>
+      <div class="p-3 flex justify-center text-[12px]">
+        <span class="text-gray-800 font-semibold"
+          >Todays Date :
+          {{ currentDate | date: 'longDate':undefined:langLocaleId }}</span
+        >
+      </div>
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { supportedLanguages } from './supported-languages';
 })
 export class TranslationService {
   currentLanguage: string = 'en';
+  currentLanguageLocaleId: string = 'en-US';
   supportedLanguages = supportedLanguages;
 
   private selectedLanguage = new BehaviorSubject<any>(null);
@@ -40,6 +41,7 @@ export class TranslationService {
   onLanguageChanged(lang: string) {
     this.currentLanguage = lang;
     localStorage.setItem('lang', lang);
+    this.currentLanguageLocaleId = supportedLanguages.find((x) => x.code === lang).localeID;
     this.selectedLanguage.next(null);
   }
 
@@ -49,5 +51,9 @@ export class TranslationService {
 
   getSupportedLanguages() {
     return cloneDeep(this.supportedLanguages);
+  }
+
+  getCurrentLanguageLocaleId(): string {
+    return this.currentLanguageLocaleId;
   }
 }
