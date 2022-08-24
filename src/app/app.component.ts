@@ -14,6 +14,7 @@ export class AppComponent implements OnInit, OnDestroy {
   langLocaleId: string = this.translationService.getCurrentLanguageLocaleId();
   availableLanguages: any[] = [];
   currentDate: Date = new Date();
+  
   constructor(private translationService: TranslationService) {}
 
   ngOnInit(): void {
