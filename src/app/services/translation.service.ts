@@ -34,10 +34,18 @@ export class TranslationService {
     }
     return '';
   }
+
+  getCurrentLanguageLocaleId(): string {
+    return this.currentLanguageLocaleId;
+  }
+
   setDefaultLanguage() {
     this.translate.setDefaultLang('en');
   }
-
+  
+  translatePage() {
+    this.translate.use(this.currentLanguage);
+  }
   onLanguageChanged(lang: string) {
     this.currentLanguage = lang;
     localStorage.setItem('lang', lang);
@@ -45,15 +53,11 @@ export class TranslationService {
     this.selectedLanguage.next(null);
   }
 
-  translatePage() {
-    this.translate.use(this.currentLanguage);
-  }
+  
 
   getSupportedLanguages() {
     return cloneDeep(this.supportedLanguages);
   }
 
-  getCurrentLanguageLocaleId(): string {
-    return this.currentLanguageLocaleId;
-  }
+  
 }
